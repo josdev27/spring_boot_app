@@ -9,4 +9,4 @@ RUN mvn package
 FROM openjdk:8-jdk-alpine
 WORKDIR /app/
 COPY --from=builder /build/target/*.jar demo.jar
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java", "-jar", "demo.jar"]
