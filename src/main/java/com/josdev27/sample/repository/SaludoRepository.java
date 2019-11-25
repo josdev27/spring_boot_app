@@ -10,7 +10,7 @@ import com.josdev27.sample.domain.Saludo;
 
 @Repository
 @Profile("db")
-public interface SaludoRepository extends CrudRepository<Saludo, Long> {
+public interface SaludoRepository extends CrudRepository<Saludo, Integer> {
    
     List<Saludo> findAll();
     

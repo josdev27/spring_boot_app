@@ -18,7 +18,7 @@ public class Saludo implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
  
     @Column(name = "saludo")
     private String saludo;
