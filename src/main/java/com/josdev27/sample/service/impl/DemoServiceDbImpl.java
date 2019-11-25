@@ -1,6 +1,7 @@
 package com.josdev27.sample.service.impl;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
@@ -20,8 +21,11 @@ public class DemoServiceDbImpl implements DemoService {
     @Override
     public String getRandomHello(String name) {
         List<Saludo> saludos = saludoRepository.findAll();
-        Saludo saludo = saludos.stream().findAny().orElseGet(() -> new Saludo("Hello"));
-        return saludo.getSaludo() + ", " + name;
+        if (!saludos.isEmpty()) {
+            Random random = new Random();
+            return saludos.get(random.nextInt(saludos.size())).getSaludo() + ", " + name;
+        }
+        return "Hello, " + name;
     }
 
 }

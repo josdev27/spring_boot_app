@@ -25,6 +25,10 @@ public class Saludo implements Serializable {
     @Column(name = "saludo")
     private String saludo;
     
+    public Saludo() {
+        
+    }
+
     public Saludo(String saludo) {
         this.saludo = saludo;
     }
